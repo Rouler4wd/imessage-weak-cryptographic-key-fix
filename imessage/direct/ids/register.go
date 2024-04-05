@@ -205,7 +205,7 @@ func (u *User) RegisterSpecificAuthCerts(ctx context.Context, handles map[string
 		}
 	}
 	if u.IDSEncryptionKey == nil {
-		u.IDSEncryptionKey, err = rsa.GenerateKey(rand.Reader, 1280)
+		u.IDSEncryptionKey, err = rsa.GenerateKey(rand.Reader, 2048)
 		if err != nil {
 			return fmt.Errorf("failed to generate IDS encryption key: %w", err)
 		}

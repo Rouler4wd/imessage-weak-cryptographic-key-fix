@@ -35,7 +35,7 @@ const GeneratorVersion = 2
 
 func GeneratePushCert(ctx context.Context, versions ids.Versions) (*rsa.PrivateKey, *x509.Certificate, error) {
 	// 2048-bit also works, but use 1024-bit to match what macOS does (Apple doesn't make secure software)
-	priv, err := rsa.GenerateKey(rand.Reader, 1024)
+	priv, err := rsa.GenerateKey(rand.Reader, 2048)
 	if err != nil {
 		return nil, nil, err
 	}
